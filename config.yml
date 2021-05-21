@@ -1,5 +1,0 @@
-defaults:
-  username: "<QUALYS_API_USERNAME>"
-  password: "<QUALYS_API_PASSWORD>"
-  apiURL: "<QUALYS_API_URL>"
-  cloudview: true

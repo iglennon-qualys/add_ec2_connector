@@ -1,7 +1,7 @@
 THIS SCRIPT IS PROVIDED TO YOU "AS IS." TO THE EXTENT PERMITTED BY LAW, QUALYS HEREBY DISCLAIMS ALL WARRANTIES AND LIABILITY FOR THE PROVISION OR USE OF THIS SCRIPT. IN NO EVENT SHALL THESE SCRIPTS BE DEEMED TO BE CLOUD SERVICES AS PROVIDED BY QUALYS
 
-# add_ec2_connector
-Info : Python File adds the AWS EC2 connector into Qualys Asset View Connectors w.r.t details provided in "./AWS_EC2_CONNECTOR_INFO.csv" & "./config.txt".
+# EC2_Connectors_Final.py
+Processes a CSV input to add AWS EC2 Connectors to a Qualys subscription
 Console output as well as debug_file.txt will have both success & failure logs.
 
 # AWS_EC2_CONNECTOR_INFO.csv
@@ -33,26 +33,25 @@ Script looks for AWS_CONNECTOR_INFO.csv in the directory the script runs from
 
 > "VM PC SCA"
 
-# Script configuration
-*config.yml*
-Provide script configuration information for API U/P, vulnerability severity ratings, and Qualys API URL
-  username: "QualysUsername"
-  password: "QualysPassword"
+# Script Usage
+```text
+EC2_Connectors_Final.py [-h] [-c] [-d] username api_endpoint
 
-  apiURL: "Qualys API URL base (https:// - > .com/, no trailing '/') for your pod"
-  Examples:
-  >https://qualysapi.qualys.com
+positional arguments:
+  username         Qualys Username
+  api_endpoint     Qualys API FQDN (e.g. qualysapi.qualys.com
 
-  >https://qualysapi.qg2.apps.qualys.com
+optional arguments:
+  -h, --help       show this help message and exit
+  -c, --cloudview  Also add Cloud View connector with the same details
+  -d, --debug      Enable debug output to file
+```
 
-  Boolean create CloudView connector at the same time
-
-  cloudview: true / false
 
 # Script Requirements
 This script is written in Python 3.7.4
 This script requires the following PIP modules to run
-Modules: sys, requests, datetime, os, time, yaml, json, csv, base64\
+Modules: sys, requests, datetime, os, time, csv, base64\
 
 # Debug
 Debug file for script run, located in ./debug folder with time/date stamp per line. To disable debug, comment out all lines containing "debug"
