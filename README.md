@@ -35,11 +35,12 @@ Script looks for AWS_CONNECTOR_INFO.csv in the directory the script runs from
 
 # Script Usage
 ```text
-EC2_Connectors_Final.py [-h] [-c] [-d] username api_endpoint
+EC2_Connectors_Final.py [-h] [-c] [-d] username api_endpoint input_file
 
 positional arguments:
   username         Qualys Username
   api_endpoint     Qualys API FQDN (e.g. qualysapi.qualys.com
+  input_file       CSV Input File
 
 optional arguments:
   -h, --help       show this help message and exit
